@@ -1,0 +1,70 @@
+::ng-deep {
+    .green-snackbar {
+        background: rgb(65, 252, 134);
+        color: white;
+    }
+
+    .green-snackbar button {
+        background-color: rgb(65, 252, 134);
+        color: white;
+        border: none;
+    }
+
+    .red-snackbar {
+        background: #F44336;
+        color: white;
+    }
+
+    .red-snackbar button {
+        background-color: #F44336;
+        color: white !important;
+        border: none;
+    }
+}
+
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+    background-color: transparent !important;
+}
+
+.btn-red {
+    min-width: 278px;
+    height: 56px;
+    border-radius: 50px;
+    color: white;
+    background-color: $primary-color;
+
+    &:hover {
+        background-color: rgba($color: $primary-color, $alpha: 0.8);
+    }
+}
+
+.btn-red-sm {
+    padding: 15px 25px;
+
+    color: white;
+    background-color: $primary-color;
+
+    &:hover {
+        background-color: rgba($color: $primary-color, $alpha: 0.8);
+    }
+}
+
+.btn-gray-sm {
+    padding: 15px 25px;
+
+    color: $primary-color;
+    background-color: #F6F6F7;
+
+    &:hover {
+        background-color: rgba($color: #d5d5d8, $alpha: 1);
+    }
+}
+
+.vh-login-navbar {
+    .mat-mdc-button-persistent-ripple {
+        border-radius: 0% !important;
+    }
+
+
+}

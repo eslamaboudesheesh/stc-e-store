@@ -1,0 +1,11 @@
+<div>
+  <ng-container>
+    <app-nav-login (onLogout)="handleLogout()"></app-nav-login>
+  </ng-container>
+  <div class="content-side__right">
+    <router-outlet></router-outlet>
+  </div>
+  <ng-container>
+    <app-footer-login></app-footer-login>
+  </ng-container>
+</div>

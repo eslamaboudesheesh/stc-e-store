@@ -1,0 +1,89 @@
+   @import "./../../../../assets/styles/init.scss";
+
+   .skills-btn-selected {
+       border-radius: 7px;
+       padding: 6px 16px 6px 16px;
+       background-color: $primary-color;
+       color: white;
+       font-size: 16px;
+       border: none;
+       font-weight: 300;
+
+       &:hover {
+           background-color: rgba($color: $primary-color, $alpha: 0.8);
+       }
+   }
+
+   .skills-btn {
+       border-radius: 7px;
+       padding: 6px 16px 6px 16px;
+       background-color: #0F5B6E;
+       color: white;
+       border: none;
+       font-size: 16px;
+       font-weight: 300;
+
+       &:hover {
+           background-color: rgba($color: #0F5B6E, $alpha: 0.8);
+       }
+   }
+
+   .dialog-title {
+       padding: 5px 24px;
+       font-size: 20px;
+       font-weight: 500;
+   }
+
+   .dialog-sub-title {
+       font-size: 14px;
+   }
+
+   .skills-section {
+       flex-wrap: wrap;
+       display: flex;
+
+   }
+
+   .cancel-btn {
+       background-color: $secondary;
+       color: $primary-color !important;
+       padding: 20px 45px;
+       margin: 15px 10px;
+
+       &:hover {
+           background-color: rgba($color: $secondary, $alpha: 0.8);
+       }
+   }
+
+   .save-btn {
+       background-color: $primary-color;
+       color: white !important;
+       padding: 20px 45px;
+       margin: 15px 10px;
+
+       &:hover {
+           background-color: rgba($color: $primary-color, $alpha: 0.8);
+       }
+   }
+
+   .skills-btn-wrapper {
+       .la-plus {
+           background-color: white;
+           color: #0F5B6E;
+           border-radius: 50%;
+           height: 1em;
+           width: 1em;
+           margin-inline-start: 15px;
+           font-size: large;
+       }
+
+       .la-check {
+           background-color: white;
+           color: $primary-color;
+           border-radius: 50%;
+           height: 1em;
+           width: 1em;
+           margin-inline-start: 15px;
+           font-size: large;
+       }
+   }

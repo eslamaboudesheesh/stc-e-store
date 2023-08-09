@@ -1,0 +1,44 @@
+@import "./../../../../../assets/styles/init.scss";
+
+.vh-navbar {
+    height: auto;
+
+    @include mobile {
+        height: auto;
+    }
+
+    .navbar-brand {
+
+
+        img {
+            height: 70px;
+            width: fit-content;
+        }
+    }
+
+    .navbar-nav {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+
+        @include tablet {
+            align-items: flex-start !important;
+        }
+
+        .nav-item {
+            padding: 0px 15px;
+        }
+
+        .nav-link {
+            color: $secondary-dark;
+
+            &:hover {
+                color: $primary-color !important;
+            }
+        }
+
+        .nav-link.active {
+            color: $primary-color !important;
+        }
+    }
+}

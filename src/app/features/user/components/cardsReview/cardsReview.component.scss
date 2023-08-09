@@ -1,0 +1,76 @@
+@import "./../../../../../assets/styles/init.scss";
+
+.vh-cards-review {
+    background-color: $white;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 0px 0px 15px 15px;
+
+
+    .card-header {
+        .rating-order-wrp {
+            .rating-star {
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            .rating-list {
+                padding: 15px 0;
+            }
+        }
+    }
+
+    .card-body {
+        p {
+            color: #8D8D8D;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+
+    }
+
+    .card-footer {
+        .role-review-user {
+            display: flex;
+            align-items: center;
+
+            img {
+                height: 50px;
+                width: 50px;
+
+            }
+
+            .user-info {
+                padding-inline-start: 12px;
+
+                h3,
+                p {
+                    font-size: 12px;
+                }
+
+                p {
+                    color: $secondary-dark;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+::ng-deep label.star {
+    padding: 0 5px !important;
+    font-size: 20px !important;
+    color: #ddd !important;
+
+    &::before {
+        content: "\f005" !important;
+    }
+
+    &:hover {
+        transform: rotate(0deg) scale(1.2) !important;
+    }
+}

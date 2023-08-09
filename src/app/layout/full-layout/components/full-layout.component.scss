@@ -1,0 +1,5 @@
+@import "./../../../../assets/styles/init.scss";
+
+.full-layout_content {
+    min-height: calc(100vh - $header-height);
+}

@@ -1,0 +1,55 @@
+$primary-color: #502c84;
+$dark: #161C23;
+$secondary-light: #F5F5F8;
+$secondary: #E5EDEE;
+$secondary-dark: #8B8C98;
+$white: white;
+
+
+$box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+$light-box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+
+.box-shadow {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.light-box-shadow {
+    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.primary-color {
+    color: #502c84;
+}
+
+
+
+.dark {
+    color: #1c1d21;
+}
+
+.secondary-light {
+    color: #F5F5F8;
+}
+
+.secondary-dark {
+    color: #8B8C98;
+}
+
+
+
+
+.warn {
+    color: #f4be5e;
+}
+
+.success {
+    color: #7ce7ac;
+}
+
+.danger {
+    color: #ff808b;
+}
+
+.white {
+    color: #fff;
+}

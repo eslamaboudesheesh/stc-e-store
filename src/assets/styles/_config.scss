@@ -1,0 +1,163 @@
+html {
+    font-size: 15px;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: left;
+    background-color: white;
+    font-family: $poppins-font;
+
+    &.overflow-hidden {
+        overflow: hidden !important;
+        overflow-y: hidden !important;
+        overflow-x: hidden !important;
+    }
+}
+
+*,
+*::before,
+*::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body img {
+    border: 0px;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+strong {
+    margin: 0px;
+    padding: 0px;
+    margin-block: 0;
+    word-break: break-word;
+}
+
+i {
+    font-size: 18px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    text-transform: capitalize;
+    transition: $transition;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+label {
+    font-size: 14px;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+input[type='color'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+select:focus,
+textarea,
+.react-dropdown-select-input {
+    @media (max-width: 768px) {
+        font-size: 20px !important;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px white inset !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba($color: $primary-color, $alpha: 0.1);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba($color: $primary-color, $alpha: 0.3);
+    border-radius: 10px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $primary-color;
+}
+
+::placeholder {
+    font-size: 0.8rem;
+    color: $secondary-dark ;
+}
+
+:not(:root):fullscreen::backdrop {
+    background-color: transparent !important;
+}
+
+.bold {
+    font-weight: bold;
+}

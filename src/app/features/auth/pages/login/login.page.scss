@@ -1,0 +1,114 @@
+@import "./../../../../../assets/styles/init.scss";
+
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-inline-start: 7rem;
+    min-height: 100vh;
+
+    @include mobile {
+        flex-direction: column-reverse;
+        padding-inline-start: unset;
+        min-height: 100vh;
+        background-color: unset;
+        margin-top: 0px;
+    }
+
+
+
+
+
+    .login-form {
+        &_title {
+            h1 {
+
+
+                font-weight: bold;
+                font-size: 35px;
+            }
+
+            h3 {
+                color: $secondary-dark;
+                font-weight: lighter;
+                font-size: 20px;
+
+            }
+        }
+
+        .input-password {
+            position: relative;
+
+            .show-password {
+                position: absolute;
+                inset-inline-end: 0;
+                padding: 10px;
+                display: block;
+                text-align: center;
+                color: #8181a5;
+                cursor: pointer;
+                bottom: 5px;
+            }
+        }
+
+        .form-desc {
+            p {
+                text-align: center;
+                font-size: 14px;
+                color: $secondary-dark;
+                line-height: 1.8;
+                padding: 20px;
+
+                a {
+                    &:hover {
+                        color: rgba($color: $primary-color, $alpha: 0.8);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .form-control {
+            height: 48px;
+        }
+    }
+
+    .login-img {
+        display: flex;
+        justify-content: flex-end;
+
+        @include tablet {
+            justify-content: center !important;
+        }
+
+        img {
+            width: 100%;
+
+
+            @include tablet {
+                width: inherit;
+                height: inherit;
+                min-height: auto;
+            }
+        }
+    }
+
+    .btn-blue {
+        min-width: 278px;
+        height: 56px;
+        border-radius: 50px;
+        color: white;
+        background-color: $primary-color;
+
+        &:hover {
+            background-color: rgba($color: $primary-color, $alpha: 0.8);
+        }
+    }
+}
+
+.ng-submitted.ng-invalid:not(form) {
+    border-left: 5px solid #a94442;
+    /* red */
+}
