@@ -3,6 +3,8 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { TranslationService } from 'src/app/core/services/translation/translation.service';
+import { Lang } from 'src/app/core/enums/lang.enum';
 
 @Component({
   selector: 'app-nav-login',
@@ -11,14 +13,16 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class NavLoginComponent implements OnInit {
   @Input() currentUser!: any;
-
+  currentLanguage: string | undefined;
+  @Output() isLanguageChanged = new EventEmitter();
   @Output() onLogout = new EventEmitter();
   isDesktop: boolean = false;
   isDesktopMood: boolean = false;
   constructor(
     private router: Router,
     private breakpointObserver: BreakpointObserver,
-    private authService: AuthService
+    private authService: AuthService,
+    private translationService: TranslationService
   ) {}
   ngOnInit(): void {
     this.breakpointObserver
@@ -33,10 +37,17 @@ export class NavLoginComponent implements OnInit {
           this.isDesktopMood = false;
         }
       });
+
+    this.currentLanguage = this.translationService.getLanguage();
   }
 
   handleLogout() {
     this.authService.LogOut();
     this.router.navigateByUrl('/login');
+  }
+  changeLang(lang: Lang | string) {
+    this.translationService.setLanguage(lang);
+    this.currentLanguage = lang;
+    this.isLanguageChanged.emit(lang);
   }
 }

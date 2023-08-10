@@ -8,5 +8,13 @@
   "SIGN": "Sign In",
   "USER": " User",
   "ADMIN": " Admin",
-  "SHOW": "Show"
+  "SHOW": "Show",
+  "PRODUCTS": "Products ",
+  "ADD_NEW_PRODUCT": " Add New Product",
+  "PRODUCT_NAME": "Product Name",
+  "PRICE": "Price",
+  "CATEGORY": "Category",
+  "DESCRIPTION": "Description",
+  "ACTIONS": "Actions",
+  "LOG_OUT": "Log Out"
 }

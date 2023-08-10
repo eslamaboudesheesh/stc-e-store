@@ -16,7 +16,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
-import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [LoginPage],
@@ -34,7 +33,6 @@ import { TranslateModule } from '@ngx-translate/core';
     MatButtonModule,
     MatSelectModule,
     MatDialogModule,
-    TranslateModule,
   ],
   providers: [],
 })

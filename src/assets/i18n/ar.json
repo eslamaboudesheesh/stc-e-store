@@ -8,5 +8,13 @@
   "USER_NAME": "اسم االمستخدم",
   "USER": "مستخدم",
   "ADMIN": "مسؤل",
-  "SHOW": "عرض"
+  "SHOW": "عرض",
+  "PRODUCTS": " المنتجات ",
+  "ADD_NEW_PRODUCT": " اضافه منتج جديد",
+  "PRODUCT_NAME": "اسم المنتج",
+  "PRICE": "السعر",
+  "CATEGORY": "الفئه",
+  "DESCRIPTION": "الوصف",
+  "ACTIONS": "أجراءات",
+  "LOG_OUT": "تسجيل الخروج"
 }

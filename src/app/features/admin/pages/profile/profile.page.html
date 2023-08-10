@@ -1,15 +1,16 @@
-<div class="org-profile-page mt-2">
+<div class="org-profile-page mt-2" inRtl>
     <div class="container">
         <div class="table-header">
             <div class="table-header__title">
-                <h3>Products</h3>
-                <p>total: {{numOfProducts}}</p>
+                <h3>{{"PRODUCTS" | translate}}</h3>
+                <p>{{"TOTAL" | translate}}: {{numOfProducts}}</p>
             </div>
             <div class="table-header__actions">
 
                 <div>
 
-                    <button mat-raised-button (click)="openDialog(0,false)" color="primary">Add New Product</button>
+                    <button mat-raised-button (click)="openDialog(0,false)" color="primary">{{"ADD_NEW_PRODUCT" |
+                        translate}}</button>
 
                 </div>
             </div>

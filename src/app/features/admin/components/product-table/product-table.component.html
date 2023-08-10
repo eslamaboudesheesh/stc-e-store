@@ -5,7 +5,7 @@
             <ng-container [matColumnDef]="column.label" *ngFor="let column of columnsSchema "
                 [sticky]="column.label === 'status'">
 
-                <th mat-header-cell *matHeaderCellDef>{{column.label}}</th>
+                <th mat-header-cell *matHeaderCellDef>{{column['EN'] | translate}}</th>
 
 
 
@@ -19,10 +19,10 @@
                 <ng-container *ngIf="column.label === 'Actions'">
                     <td mat-cell *matCellDef="let element">
                         <div class=" justifay-content-between d-flex table-action">
-                            <span class="icon icon-Button-Edit" (click)="actionClick(1 ,element)">
+                            <span class="icon icon-Button-Edit" (click)="actionClick(0 ,element)">
                                 <i class="las la-edit"></i>
                             </span>
-                            <span class="icon icon-Button-Trash" (click)="actionClick(2 ,element)">
+                            <span class="icon icon-Button-Trash" (click)="actionClick(1 ,element)">
                                 <i class="las la-trash"></i>
                             </span>
                         </div>

@@ -6,6 +6,7 @@ import { ToastrService } from 'src/app/shared/services/toastr/toastr.services';
 import { ToastrTypes } from 'src/app/shared/enums/toastrTypes';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductDialog } from '../../components/product-dialog/product-dialog.component';
+import { TranslationService } from 'src/app/core/services/translation/translation.service';
 interface ProductListItem {
   id: number;
   title: string;
@@ -31,33 +32,43 @@ export class ProfilePage implements OnInit {
     {
       label: 'product Name',
       field: 'title',
+      EN: 'PRODUCT_NAME',
     },
     {
       label: ' price',
       field: 'price',
+      EN: 'PRICE',
     },
     {
       label: 'category',
       field: 'category',
+      EN: 'CATEGORY',
     },
     {
       label: 'description',
       field: 'description',
+      EN: 'DESCRIPTION',
     },
     {
       label: 'Actions',
       field: '',
+      EN: 'ACTIONS',
     },
   ];
   constructor(
     public AdminServices: AdminServices,
     public dialogService: DialogService,
     private toastrService: ToastrService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private translationService: TranslationService
   ) {}
 
   ngOnInit(): void {
-    this.getProducts();
+    this.currentLang = this.translationService.currentLanguage$.subscribe(
+      (language) => {
+        this.getProducts();
+      }
+    );
   }
   getProducts(): void {
     this.isLoading = true;
@@ -76,10 +87,10 @@ export class ProfilePage implements OnInit {
   handleAction(actionType: any) {
     console.log(actionType);
     switch (actionType.type) {
-      case 1:
+      case 0:
         this.openDialog(actionType?.dataItem.id, true);
         break;
-      case 2:
+      case 1:
         this.openDeletedDialog(actionType?.dataItem);
         break;
       default:

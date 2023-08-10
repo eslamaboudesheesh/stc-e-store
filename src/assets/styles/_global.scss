@@ -91,3 +91,11 @@
     direction: rtl;
     text-align: start !important;
 }
+
+.rtl {
+
+    th,
+    td {
+        text-align: start !important;
+    }
+}

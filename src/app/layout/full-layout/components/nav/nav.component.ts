@@ -24,6 +24,5 @@ export class NavComponent implements OnInit {
     this.translationService.setLanguage(lang);
     this.currentLanguage = lang;
     this.isLanguageChanged.emit(lang);
-    // window.location.reload();
   }
 }

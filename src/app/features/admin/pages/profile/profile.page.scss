@@ -35,6 +35,9 @@
             p {
                 color: #a1a5b7;
                 font-size: 14px;
+                margin-bottom: 0;
+                margin-inline-start: 10px;
+
             }
         }
 
@@ -45,7 +48,20 @@
         }
     }
 
+    &.rtl {
+        .table-header {
+            &__title {
+                width: 150px !important;
 
+                h3 {
+                    &::after {
+                        right: unset;
+                        left: -19px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .overlay {
