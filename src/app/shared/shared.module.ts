@@ -8,9 +8,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
+import { RtlDirective } from './directives/rtl.directive';
 
 @NgModule({
-  declarations: [DialogComponent],
+  declarations: [DialogComponent, RtlDirective],
   imports: [
     CommonModule,
     FormsModule,
@@ -30,6 +31,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatDialogModule,
     MatSnackBarModule,
     MatSelectModule,
+    RtlDirective,
   ],
   providers: [DialogService],
 })

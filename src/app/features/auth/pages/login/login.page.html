@@ -1,27 +1,27 @@
-<div class=" container">
-  <div class="row align-items-center login-wrapper">
+<div class=" container ">
+  <div class="row align-items-center login-wrapper " inRtl>
     <div class="col-lg-6 ">
       <div class="login-form_title ">
-        <h1> Welcome Back To STC Store! {{'Name' | translate}}</h1>
-        <h3 class="mt-3">We just need a few quick things. </h3>
+        <h1> {{'LOGIN_TITLE' | translate}}</h1>
+        <h3 class="mt-3">{{'LOGIN_SUB_TITLE' | translate}}</h3>
       </div>
       <div class="login-form col-md-10">
 
         <form #loginForm="ngForm" (ngSubmit)="signIn(loginForm)">
           <div class="row mt-3">
-            <label>Choose Account Type</label>
+            <label>{{"ACCOUNT_TYPE" | translate}}</label>
             <mat-radio-group class="mt-3 p-0" name="type" #type="ngModel" [(ngModel)]="user.type" on
               aria-labelledby="example-radio-group-label">
               <mat-radio-button color="primary" *ngFor="let account of accountsType" [value]="account.value"
                 [checked]="account.checked" (change)="radioChange(account.value)">
-                {{account.name}}
+                {{account.EN | translate}}
               </mat-radio-button>
             </mat-radio-group>
           </div>
 
           <div class="row">
             <div class="col mt-3">
-              <label for="email" class="form-label ">User Name</label>
+              <label for="email" class="form-label ">{{"USER_NAME" | translate}}</label>
               <input type="text" id="usename" name="usename" #usename="ngModel" [(ngModel)]="user.userName"
                 class="form-control " required [ngClass]="{ 'is-invalid': submitted && usename.errors }">
 
@@ -35,13 +35,13 @@
           </div>
           <div class="row">
             <div class="col mt-3">
-              <label for="password" class="form-label">Password</label>
+              <label for="password" class="form-label">{{"PASSWORD" | translate}}</label>
               <div class="input-password ">
                 <input [type]="user.showPassword ? 'text' : 'password'" id="password" placeholder="Enter password"
                   name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control " required
                   [ngClass]="{ 'is-invalid': submitted && password.errors }">
                 <span class="show-password" (click)="user.showPassword = !user.showPassword">
-                  show
+                  {{"SHOW" | translate }}
                 </span>
                 <div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="danger mt-2">
                   <div *ngIf="password.errors?.['required']">
@@ -51,19 +51,12 @@
               </div>
             </div>
           </div>
-          <div class="row justify-content-center form-desc mt-3">
-            <p>
-              By continuing you indicate that you’ve read and agree
-              to our <a class="primary-red" href="#">Terms of Service</a>
-              and <a class="primary-red" href="#">Privacy Policy.</a>
 
-            </p>
-          </div>
           <div class="row">
             <div class="col d-grid justify-content-center mt-3">
               <button type="submit" (click)="signIn(loginForm)" class="btn btn-sm btn-red" [disabled]="loading">
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
-                Sign in
+                {{"SIGN" | translate}}
               </button>
 
             </div>

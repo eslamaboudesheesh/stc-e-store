@@ -27,8 +27,8 @@ export class LoginPage implements OnInit {
   submitted = false;
   accountTypeNum = LoginAction;
   accountsType: any[] = [
-    { name: 'User', value: 1, checked: true },
-    { name: 'Admin', value: 2, checked: false },
+    { name: 'User', value: 1, checked: true, EN: 'USER' },
+    { name: 'Admin', value: 2, checked: false, EN: 'ADMIN' },
   ];
   constructor(
     private _snackBar: MatSnackBar,

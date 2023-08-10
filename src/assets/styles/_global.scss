@@ -86,3 +86,8 @@
 .warning-bck {
     background-color: $orange-800;
 }
+
+.rtl {
+    direction: rtl;
+    text-align: start !important;
+}

@@ -53,22 +53,7 @@
             }
         }
 
-        .form-desc {
-            p {
-                text-align: center;
-                font-size: 14px;
-                color: $secondary-dark;
-                line-height: 1.8;
-                padding: 20px;
 
-                a {
-                    &:hover {
-                        color: rgba($color: $primary-color, $alpha: 0.8);
-                        text-decoration: underline;
-                    }
-                }
-            }
-        }
 
         .form-control {
             height: 48px;

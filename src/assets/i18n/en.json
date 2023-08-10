@@ -1,3 +1,12 @@
 {
-  "Name": "Name"
+  "LOGIN_TITLE": "Welcome Back To STC Store!",
+  "LOGIN_SUB_TITLE": "We just need a few quick things.",
+  "ACCOUNT_TYPE": "Choose Account Type",
+  "USER_NAME": "User Name",
+  "PASSWORD": " Password",
+  "TOTAL": " Total",
+  "SIGN": "Sign In",
+  "USER": " User",
+  "ADMIN": " Admin",
+  "SHOW": "Show"
 }
