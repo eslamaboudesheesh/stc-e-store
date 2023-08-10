@@ -8,7 +8,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-
+            <div class="language-controls">
+                <div (click)="changeLang('ar')" *ngIf="currentLanguage === 'en'">
+                    <img src="../../../../../assets/images/eg-flag.png" alt="ar logo" />
+                </div>
+                <div (click)="changeLang('en')" *ngIf="currentLanguage === 'ar'">
+                    <img src="../../../../../assets/images/us-flag.png" alt="en logo" />
+                </div>
+            </div>
 
             <ul class="navbar-nav  mb-2 mb-lg-0">
 

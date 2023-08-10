@@ -1,3 +1,25 @@
-<div class="org-profile-page">
+<div class="org-profile-page mt-2">
+    <div class="container">
+        <div class="table-header">
+            <div class="table-header__title">
+                <h3>Products</h3>
+                <p>total: {{numOfProducts}}</p>
+            </div>
+            <div class="table-header__actions">
 
+                <div>
+
+                    <button mat-raised-button (click)="openDialog(0,false)" color="primary">Add New Product</button>
+
+                </div>
+            </div>
+        </div>
+        <app-product-table [dataSource]="productsList" [columnsSchema]="columnsSchema"
+            (isActionClicked)="handleAction($event)">
+        </app-product-table>
+    </div>
+</div>
+
+<div class="overlay" *ngIf="isLoading">
+    <progress-spinner> </progress-spinner>
 </div>

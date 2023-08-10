@@ -15,11 +15,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
-import { SkillsDialog } from './components/skills-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [LoginPage, SkillsDialog],
+  declarations: [LoginPage],
   imports: [
     CommonModule,
     SharedModule,
@@ -34,6 +34,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     MatSelectModule,
     MatDialogModule,
+    TranslateModule,
   ],
   providers: [],
 })

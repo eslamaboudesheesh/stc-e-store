@@ -1,0 +1,90 @@
+@import "./../../../../../assets/styles/init.scss";
+
+.table-wrapper {
+    margin-bottom: 20px;
+
+    .mat-mdc-table {
+        display: block;
+        overflow-x: auto;
+        border-radius: 8px !important;
+
+        thead {
+            background-color: #f5f8fa !important;
+
+            th {
+                font-size: 16px;
+                color: #979797;
+                text-align: center;
+            }
+        }
+
+        span.i {
+            font-size: 22px;
+            display: inline-block;
+
+            cursor: pointer;
+        }
+
+        td {
+            font-size: 15px;
+
+
+        }
+    }
+
+    .table-action {
+        .icon {
+            cursor: pointer;
+            background-color: $secondary-light;
+            padding: 12px;
+            margin-inline-end: 5px;
+            border-radius: 8px;
+
+            &:hover {
+                background-color: rgba($color: $secondary-dark, $alpha: 0.8);
+            }
+
+            .la-edit {
+                color: $primary-color;
+            }
+
+            .la-trash {
+                color: red
+            }
+        }
+    }
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+
+    .mat-mdc-table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        display: table;
+        border-collapse: collapse;
+        margin: 0px;
+        margin: 0px;
+        min-height: 100vh;
+    }
+
+    .mat-row,
+    .mat-header-row {
+        display: table-row;
+    }
+
+    .mat-cell,
+    .mat-header-cell {
+        word-wrap: initial;
+        display: table-cell;
+        padding: 0px 5px;
+        line-break: unset;
+        width: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+}

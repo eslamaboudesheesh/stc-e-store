@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { IUser } from '../../models/UserModelView';
 import { LoginAction } from 'src/app/core/enums/login-action';
+import { TranslationService } from 'src/app/core/services/translation/translation.service';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,8 @@ import { LoginAction } from 'src/app/core/enums/login-action';
 })
 export class LoginPage implements OnInit {
   loading: boolean;
+  currentLang: any;
+
   user: IUser;
   submitted = false;
   accountTypeNum = LoginAction;
@@ -30,13 +33,18 @@ export class LoginPage implements OnInit {
   constructor(
     private _snackBar: MatSnackBar,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private translationService: TranslationService
   ) {
     this.user = {} as IUser;
     this.loading = false;
   }
   ngOnInit(): void {
-    this.formInit();
+    this.currentLang = this.translationService.currentLanguage$.subscribe(
+      (language) => {
+        this.formInit();
+      }
+    );
   }
 
   public formInit() {

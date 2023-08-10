@@ -1,0 +1,58 @@
+<h2 mat-dialog-title class="dialog-title"> {{IsEditedMode ? 'Update Product' : 'Add Product'}}</h2>
+<form [formGroup]="AddForm" (ngSubmit)="formSubmit()">
+
+    <mat-dialog-content class="mat-typography">
+
+        <section class=" mt-2 mb-2">
+
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>title</mat-label>
+                    <input matInput placeholder="Placeholder" formControlName="title" name="title">
+                    <mat-error *ngIf="AddForm.get('title')?.hasError('required')">This field is required</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Price</mat-label>
+                    <input matInput type="number" class="example-right-align" placeholder="0" name="price"
+                        formControlName="price">
+                    <mat-error *ngIf="AddForm.get('price')?.hasError('required')">This field is required</mat-error>
+                    <span matTextPrefix>$&nbsp;</span>
+                    <span matTextSuffix>.00</span>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Category</mat-label>
+                    <mat-select name="category" formControlName="category">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let state of categories" [value]="state">{{state}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="AddForm.get('category')?.hasError('required')">This field is required</mat-error>
+                </mat-form-field>
+            </div>
+
+
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>description</mat-label>
+                    <textarea matInput name="description" formControlName="description"></textarea>
+                    <mat-error *ngIf="AddForm.get('description')?.hasError('required')">This field is
+                        required</mat-error>
+
+                </mat-form-field>
+            </div>
+
+
+
+
+        </section>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close tabindex="-1" type="button" class="cancel-btn">Cancel</button>
+        <button mat-button type="submit" class="save-btn">Save</button>
+    </mat-dialog-actions>
+
+</form>

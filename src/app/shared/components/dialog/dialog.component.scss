@@ -1,0 +1,120 @@
+::ng-deep.mat-mdc-dialog-surface {
+    padding: 15px;
+}
+
+::ng-deep.mat-mdc-checkbox.mat-accent {
+    width: auto;
+}
+
+.modal-title {
+    text-transform: capitalize;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.modal-body {
+    .content-wrapper {
+        display: flex;
+        border: 2px dashed #f89c47;
+        padding: 12px;
+        margin: 12px;
+        background-color: #f89c471c;
+
+        .fa-icon {
+            height: 30px;
+            width: 30px;
+            border-radius: 50px;
+            background-color: #f89c47;
+            opacity: 0.3;
+            /* padding: 10px 15px; */
+            margin: 9px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            mix-blend-mode: normal;
+
+            .fa {
+                color: red;
+                font-size: 15px;
+
+            }
+        }
+
+        .content-info {
+            margin-left: 10px;
+            width: fit-content;
+
+            h4 {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 22px;
+                text-transform: capitalize;
+            }
+
+            p {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 22px;
+                color: #7e8299;
+                padding-top: 2px;
+            }
+        }
+    }
+}
+
+.modal-footer {
+    text-transform: capitalize;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+
+    .btn-info {
+        color: #b5b5c3;
+        font-family: "Roboto";
+        font-style: normal;
+        text-align: center;
+        background-color: #e9ecef;
+        border-color: #e9ecef;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 12px;
+        margin-inline-end: 12px;
+    }
+
+    .btn-danger {
+        background: #f1416c;
+        border-radius: 6px;
+        padding: 12px 20px;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: #ffffff;
+        text-transform: capitalize;
+    }
+}
+
+.checkbox-wrapper {
+    padding: 12px;
+
+    ::ng-deep.mat-checkbox-label {
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+
+    }
+}

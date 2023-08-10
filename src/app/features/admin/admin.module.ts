@@ -12,9 +12,21 @@ import { MatInputModule } from '@angular/material/input';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminServices } from './services/admin.services';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
 
+import { CdkTableModule } from '@angular/cdk/table';
+import { ProductTableComponent } from './components/product-table/product-table.component';
+import { ProductDialog } from './components/product-dialog/product-dialog.component';
 @NgModule({
-  declarations: [ProfilePage, EventsCardComponent, OppCardComponent],
+  declarations: [
+    ProfilePage,
+    EventsCardComponent,
+    OppCardComponent,
+    ProductTableComponent,
+    ProductDialog,
+  ],
   imports: [
     CommonModule,
     SharedModule,
@@ -24,6 +36,10 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MatInputModule,
     HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    CdkTableModule,
+    MatButtonModule,
   ],
   providers: [AdminServices],
 })
