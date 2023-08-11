@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: 'Admin',
     component: ContentLayoutComponent,
-    canActivate: [authGuardIsAdmin],
+    canActivateChild: [authGuardIsAdmin],
 
     children: [
       {
@@ -49,6 +49,7 @@ const routes: Routes = [
       },
     ],
   },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
