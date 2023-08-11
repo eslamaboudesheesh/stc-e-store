@@ -1,10 +1,12 @@
-.org-profile-page {
+@import "./../../../../../assets/styles/init.scss";
+
+.stc-user-wrapper-page {
     min-height: 100vh;
 
-    .table-header {
+    .page-header {
         display: flex;
         justify-content: space-between;
-        background-color: #fff;
+        background-color: white;
         margin-bottom: 10px;
         padding: 15px 10px;
         align-items: center;
@@ -49,7 +51,7 @@
     }
 
     &.rtl {
-        .table-header {
+        .page-header {
             &__title {
                 width: 150px !important;
 

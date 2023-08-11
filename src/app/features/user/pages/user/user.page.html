@@ -1,0 +1,41 @@
+<section class="stc-user-wrapper-page " inRtl>
+    <div class="container">
+        <div class="page-header">
+            <div class="page-header__title">
+                <h3>{{"PRODUCTS" | translate}}</h3>
+                <p>{{"TOTAL" | translate}}: {{numOfProducts}}</p>
+            </div>
+            <div class="page-header__actions">
+
+                <div>
+
+                    <mat-form-field>
+                        <mat-label> {{"FILTER" | translate }}</mat-label>
+                        <mat-select name="category" (selectionChange)="FilterCategories($event.value)">
+                            <mat-option>None</mat-option>
+                            <mat-option *ngFor="let state of categories" [value]="state">{{state}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+            </div>
+        </div>
+
+        <div *ngFor="let category of groupedProducts">
+            <h2 class="my-4 ">{{ category.categoryName }}</h2>
+            <div class="product-list">
+                <div class="row">
+                    <div *ngFor="let product of category.products" class="col-md-4 mb-2 ">
+
+                        <app-card [currentProduct]="product"
+                            (OpenCardDetails)="OpenCardDetailsFn(product.id)"></app-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="overlay" *ngIf="isLoading">
+    <progress-spinner> </progress-spinner>
+</div>

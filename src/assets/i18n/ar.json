@@ -16,5 +16,7 @@
   "CATEGORY": "الفئه",
   "DESCRIPTION": "الوصف",
   "ACTIONS": "أجراءات",
-  "LOG_OUT": "تسجيل الخروج"
+  "LOG_OUT": "تسجيل الخروج",
+  "PRODUCTS_DETAILS": "تفاصيل المنتج",
+  "FILTER": " تصفية حسب الفئة"
 }

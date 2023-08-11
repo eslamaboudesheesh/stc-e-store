@@ -1,26 +1,16 @@
-import {
-  NgModule,
-  NO_ERRORS_SCHEMA,
-  CUSTOM_ELEMENTS_SCHEMA,
-} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from 'src/app/shared/shared.module';
-import { LandingPage } from './pages/landingPage.page';
-import { CardsJobComponent } from './components/cardsJob/cardsJob.component';
-import { CardsReviewComponent } from './components/cardsReview/cardsReview.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardComponent } from './components/cardsJob/card.component';
 
-import { LandingFooterComponent } from './components/landingFooter/landingFooter.component';
 import { UserRoutingModule } from './user-routing.module';
+import { UserPage } from './pages/user/user.page';
+import { UserServices } from './services/user.services';
+import { ProductDetailsPage } from './pages/product-details/product-details.page';
 @NgModule({
-  declarations: [
-    LandingPage,
-    CardsJobComponent,
-    CardsReviewComponent,
-    LandingFooterComponent,
-  ],
+  declarations: [UserPage, CardComponent, ProductDetailsPage],
   imports: [CommonModule, SharedModule, UserRoutingModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [UserServices],
 })
 export class UserModule {}

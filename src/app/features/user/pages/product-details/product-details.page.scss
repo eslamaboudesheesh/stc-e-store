@@ -1,0 +1,114 @@
+@import "./../../../../../assets/styles/init.scss";
+
+.stc-product-page {
+    min-height: 100vh;
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        margin-bottom: 10px;
+        padding: 15px 10px;
+        align-items: center;
+        border-radius: 8px;
+
+        &__title {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+
+            h3 {
+                position: relative;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 0;
+
+
+            }
+
+            p {
+                color: #a1a5b7;
+                font-size: 14px;
+                margin-bottom: 0;
+                margin-inline-start: 10px;
+
+            }
+        }
+
+        &__actions {
+            display: flex;
+            justify-content: space-between;
+            width: max-content;
+        }
+    }
+
+    &.rtl {
+        .page-header {
+            &__title {
+                width: 150px !important;
+
+                h3 {
+                    &::after {
+                        right: unset;
+                        left: -19px;
+                    }
+                }
+            }
+        }
+    }
+
+    .img-wrapper {
+        padding: 20px;
+        box-shadow: $box-shadow;
+
+
+        img {
+            flex-grow: 1;
+            /* Allow the image to take up remaining space */
+            object-fit: contain;
+            /* Make sure the image covers the entire space */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    .content-wrapper {
+        h3 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .badge {
+            height: 30px;
+            width: 80px;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-inline-end: 8px;
+
+            &.blue-badge {
+                background-color: #CAFBFF;
+                color: #00D7E7;
+
+
+            }
+
+
+        }
+
+        .content_desc {
+            p {
+                font-size: 16px;
+                color: #333;
+                line-height: 1.8;
+                margin: 10px 0;
+            }
+        }
+    }
+}

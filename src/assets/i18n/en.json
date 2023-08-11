@@ -16,5 +16,7 @@
   "CATEGORY": "Category",
   "DESCRIPTION": "Description",
   "ACTIONS": "Actions",
-  "LOG_OUT": "Log Out"
+  "LOG_OUT": "Log Out",
+  "PRODUCTS_DETAILS": "Products Details",
+  "FILTER": "Filter By Category"
 }

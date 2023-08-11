@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LandingPage } from './pages/landingPage.page';
+import { UserPage } from './pages/user/user.page';
+import { ProductDetailsPage } from './pages/product-details/product-details.page';
 
 const routes: Routes = [
   {
@@ -13,7 +14,11 @@ const routes: Routes = [
       },
       {
         path: '',
-        component: LandingPage,
+        component: UserPage,
+      },
+      {
+        path: 'product/:id',
+        component: ProductDetailsPage,
       },
     ],
   },

@@ -1,0 +1,33 @@
+<section class="stc-product-page " inRtl>
+    <div class="container">
+        <div class="page-header">
+            <div class="page-header__title">
+                <h3>{{"PRODUCTS_DETAILS" | translate}}</h3>
+            </div>
+
+        </div>
+
+
+        <div class="row box-shadow">
+            <div class="col-md-3 img-wrapper">
+                <img src={{productDetails?.image}} alt={{productDetails?.title}}>
+            </div>
+
+            <div class="col-md-9 content-wrapper mt-3">
+                <h3 class="primary-color "> {{productDetails.title}} </h3>
+                <h3>{{productDetails.category}} </h3>
+                <h4 class="badge blue-badge">{{productDetails.price}} $</h4>
+
+                <div class="content_desc mt-5">
+                    <p> {{productDetails.description}} </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div class="overlay" *ngIf="isLoading">
+    <progress-spinner> </progress-spinner>
+</div>
