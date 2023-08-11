@@ -144,12 +144,14 @@ export class ProfilePage implements OnInit {
 
     dialogRef.afterClosed().subscribe((data: any) => {
       this.toastrService.dismiss();
-      this.toastrService.showToastr(
-        ` Product ${id != 0 ? 'updated' : 'created'} successfully  ${
-          data.title
-        }    `,
-        ToastrTypes.success
-      );
+      if (data) {
+        this.toastrService.showToastr(
+          ` Product ${id != 0 ? 'updated' : 'created'} successfully  ${
+            data.title
+          }    `,
+          ToastrTypes.success
+        );
+      }
     });
   }
 }
