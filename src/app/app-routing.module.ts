@@ -2,7 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 import { FullLayoutComponent } from './layout/full-layout/components/full-layout.component';
-import { authGuard, loginAuthGuard } from './core/guards/auth.guard';
+import {
+  authGuardIsUser,
+  authGuardIsAdmin,
+  loginAuthGuard,
+} from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -22,6 +26,7 @@ const routes: Routes = [
   {
     path: 'Admin',
     component: ContentLayoutComponent,
+    canActivate: [authGuardIsAdmin],
 
     children: [
       {
@@ -34,6 +39,8 @@ const routes: Routes = [
   {
     path: 'User',
     component: ContentLayoutComponent,
+    canActivateChild: [authGuardIsUser],
+
     children: [
       {
         path: '',

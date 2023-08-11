@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 import { LoginAction } from 'src/app/core/enums/login-action';
 
@@ -9,15 +8,13 @@ import { LoginAction } from 'src/app/core/enums/login-action';
 export class AuthService {
   accountTypeNum = LoginAction;
 
-  public authenticationUser = new BehaviorSubject<any>(undefined);
-  ruleObs = this.authenticationUser.asObservable();
   constructor() {}
 
   SignIn(data: number) {
-    this.authenticationUser.next(data);
+    localStorage.setItem('roleType', JSON.stringify(data));
   }
 
   LogOut() {
-    this.authenticationUser.next(this.accountTypeNum.LOGOUT);
+    localStorage.removeItem('roleType');
   }
 }
