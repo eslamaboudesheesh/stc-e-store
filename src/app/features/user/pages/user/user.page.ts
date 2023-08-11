@@ -4,10 +4,12 @@ import { UserServices } from '../../services/user.services';
 import { productViewModel } from '../../models/ProductView';
 import { TranslationService } from 'src/app/core/services/translation/translation.service';
 import { Router } from '@angular/router';
+import { Fade } from 'src/app/shared/animations/fade.animation';
 @Component({
   selector: 'app-user',
   templateUrl: './user.page.html',
   styleUrls: ['./user.page.scss'],
+  animations: [Fade],
 })
 export class UserPage implements OnInit {
   public productsList: any;

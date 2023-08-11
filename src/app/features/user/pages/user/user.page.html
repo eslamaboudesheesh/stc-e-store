@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div *ngFor="let category of groupedProducts">
+        <div *ngFor="let category of groupedProducts" [@fade]="groupedProducts.length > 0  ?'visible':'hidden'">
             <h2 class="my-4 ">{{ category.categoryName }}</h2>
             <div class="product-list">
                 <div class="row">

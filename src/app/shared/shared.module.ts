@@ -12,6 +12,7 @@ import { RtlDirective } from './directives/rtl.directive';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [DialogComponent, RtlDirective],
