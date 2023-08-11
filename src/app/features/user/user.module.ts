@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from 'src/app/shared/shared.module';
-import { CardComponent } from './components/cardsJob/card.component';
+import { CardComponent } from './components/cards/card.component';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserPage } from './pages/user/user.page';

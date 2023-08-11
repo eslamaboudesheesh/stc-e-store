@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ProgressSpinner } from './components/progress/progress';
+import { ProgressSpinner } from './components/progress/progress.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { DialogService } from './services/dialog-confirm/dialog-confirm.services';
 import { MatCheckboxModule } from '@angular/material/checkbox';
