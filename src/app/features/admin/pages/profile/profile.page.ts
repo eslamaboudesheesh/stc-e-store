@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { AdminServices } from '../../services/admin.services';
 import { DialogService } from 'src/app/shared/services/dialog-confirm/dialog-confirm.services';
@@ -7,6 +7,7 @@ import { ToastrTypes } from 'src/app/shared/enums/toastrTypes';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductDialog } from '../../components/product-dialog/product-dialog.component';
 import { TranslationService } from 'src/app/core/services/translation/translation.service';
+import { Subscriptions } from 'src/app/shared/utilits/subscription.class';
 interface ProductListItem {
   id: number;
   title: string;
@@ -22,7 +23,7 @@ interface ProductListItem {
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
-export class ProfilePage implements OnInit {
+export class ProfilePage implements OnInit, OnDestroy {
   public productsList: any;
   ShowFilter: any;
   isLoading: boolean = false;
@@ -55,6 +56,8 @@ export class ProfilePage implements OnInit {
       EN: 'ACTIONS',
     },
   ];
+  subscription = new Subscriptions();
+
   constructor(
     public AdminServices: AdminServices,
     public dialogService: DialogService,
@@ -72,16 +75,13 @@ export class ProfilePage implements OnInit {
   }
   getProducts(): void {
     this.isLoading = true;
-    this.AdminServices.GetProducts().subscribe((e) => {
-      if (e) {
+    this.subscription.add = this.AdminServices.GetProducts().subscribe({
+      next: (e) => {
         this.isLoading = false;
         this.productsList = e;
         this.numOfProducts = this.productsList.length;
-      }
+      },
     });
-  }
-  handleAddProduct() {
-    console.log('ssd');
   }
 
   handleAction(actionType: any) {
@@ -119,18 +119,18 @@ export class ProfilePage implements OnInit {
   }
 
   deleteProduct(id: any) {
-    this.AdminServices.DeleteProduct(id).subscribe(
-      (res: ProductListItem | any) => {
+    this.subscription.add = this.AdminServices.DeleteProduct(id).subscribe({
+      next: (res: ProductListItem | any) => {
         if (res) {
           this.getProducts();
           this.toastrService.dismiss();
           this.toastrService.showToastr(
-            ` Product deletes successfully  ${res.title}    `,
+            ` Product deletes successfully${res.title}`,
             ToastrTypes.success
           );
         }
-      }
-    );
+      },
+    });
   }
 
   openDialog(id: number, isEditedMode: boolean) {
@@ -153,5 +153,9 @@ export class ProfilePage implements OnInit {
         );
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

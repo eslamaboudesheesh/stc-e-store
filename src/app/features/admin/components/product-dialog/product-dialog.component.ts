@@ -1,20 +1,21 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AdminServices } from '../../services/admin.services';
-import { productViewModel } from '../../models/ProductView';
+import { Subscriptions } from 'src/app/shared/utilits/subscription.class';
 
 @Component({
   selector: 'product-dialog',
   templateUrl: 'product-dialog.component.html',
   styleUrls: ['./product-dialog.component.scss'],
 })
-export class ProductDialog implements OnInit {
+export class ProductDialog implements OnInit, OnDestroy {
   public IsEditedMode: boolean = false;
   loading: boolean = false;
   categories: any = [];
   submitted: boolean = false;
+  subscription = new Subscriptions();
 
   constructor(
     @Inject(MAT_DIALOG_DATA) private data: any,
@@ -39,13 +40,17 @@ export class ProductDialog implements OnInit {
   }
 
   getCategories() {
-    this.AdminServices.GetAllcategories().subscribe((e) => {
-      this.categories = e;
+    this.subscription.add = this.AdminServices.GetAllcategories().subscribe({
+      next: (e) => {
+        this.categories = e;
+      },
     });
   }
   getProductById(id: number) {
-    this.AdminServices.GetProductById(id).subscribe((e) => {
-      this.AddForm.patchValue(e);
+    this.subscription.add = this.AdminServices.GetProductById(id).subscribe({
+      next: (e) => {
+        this.AddForm.patchValue(e);
+      },
     });
   }
   formSubmit() {
@@ -55,16 +60,25 @@ export class ProductDialog implements OnInit {
       return;
     }
     if (!this.IsEditedMode) {
-      this.AdminServices.AddProducts(this.AddForm.value).subscribe((data) => {
-        this.dialogRef.close(data);
+      this.subscription.add = this.AdminServices.AddProducts(
+        this.AddForm.value
+      ).subscribe({
+        next: (data) => {
+          this.dialogRef.close(data);
+        },
       });
     } else {
-      this.AdminServices.UpdateProducts(
+      this.subscription.add = this.AdminServices.UpdateProducts(
         this.AddForm.value,
         this.data.userID
-      ).subscribe((data) => {
-        this.dialogRef.close(data);
+      ).subscribe({
+        next: (data) => {
+          this.dialogRef.close(data);
+        },
       });
     }
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

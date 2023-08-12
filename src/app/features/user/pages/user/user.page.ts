@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import currentJobsData from '../../data';
 import { UserServices } from '../../services/user.services';
 import { productViewModel } from '../../models/ProductView';
 import { TranslationService } from 'src/app/core/services/translation/translation.service';
 import { Router } from '@angular/router';
 import { Fade } from 'src/app/shared/animations/fade.animation';
+import { Subscriptions } from 'src/app/shared/utilits/subscription.class';
 @Component({
   selector: 'app-user',
   templateUrl: './user.page.html',
   styleUrls: ['./user.page.scss'],
   animations: [Fade],
 })
-export class UserPage implements OnInit {
+export class UserPage implements OnInit, OnDestroy {
   public productsList: any;
   groupedProducts: any[] = []; // Array to store grouped data
 
@@ -19,6 +20,7 @@ export class UserPage implements OnInit {
   numOfProducts: number | undefined;
   categories: any = [];
   currentLang: any;
+  subscription = new Subscriptions();
 
   constructor(
     private UserServices: UserServices,
@@ -36,13 +38,15 @@ export class UserPage implements OnInit {
 
   getProducts(): void {
     this.isLoading = true;
-    this.UserServices.GetProducts().subscribe((e: productViewModel[] | any) => {
-      if (e) {
-        this.isLoading = false;
-        this.productsList = e;
-        this.groupProductsByCategory();
-        this.numOfProducts = e.length;
-      }
+    this.subscription.add = this.UserServices.GetProducts().subscribe({
+      next: (e: productViewModel[] | any) => {
+        if (e) {
+          this.isLoading = false;
+          this.productsList = e;
+          this.groupProductsByCategory();
+          this.numOfProducts = e.length;
+        }
+      },
     });
   }
   groupProductsByCategory() {
@@ -61,23 +65,27 @@ export class UserPage implements OnInit {
     }));
   }
   getCategories() {
-    this.UserServices.GetAllcategories().subscribe((e) => {
-      this.categories = e;
+    this.subscription.add = this.UserServices.GetAllcategories().subscribe({
+      next: (e) => {
+        this.categories = e;
+      },
     });
   }
 
   getProductByCategory(data: string) {
     this.isLoading = true;
-    this.UserServices.GetProductByCategory(data).subscribe(
-      (e: productViewModel[] | any) => {
+    this.subscription.add = this.UserServices.GetProductByCategory(
+      data
+    ).subscribe({
+      next: (e: productViewModel[] | any) => {
         if (e) {
           this.isLoading = false;
           this.productsList = e;
           this.groupProductsByCategory();
           this.numOfProducts = e.length;
         }
-      }
-    );
+      },
+    });
   }
   FilterCategories(data: string) {
     if (data) {
@@ -88,5 +96,8 @@ export class UserPage implements OnInit {
   }
   OpenCardDetailsFn(data: number) {
     this.router.navigate([`User/product/${data}`]);
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
